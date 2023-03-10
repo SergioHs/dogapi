@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class Dog extends Controller
 {
@@ -11,7 +13,9 @@ class Dog extends Controller
      */
     public function index()
     {
-        //
+        $dogs= DB::table('dogs')->get();
+
+        dd($dogs);
     }
 
     /**
